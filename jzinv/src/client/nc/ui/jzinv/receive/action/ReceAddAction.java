@@ -4,7 +4,6 @@ import nc.bs.framework.common.NCLocator;
 import nc.itf.jzinv.invpub.IJzinvQuery;
 import nc.ui.jzinv.pub.action.InvoiceAction;
 import nc.ui.trade.manage.BillManageUI;
-import nc.vo.jzinv.pub.IJzinvBillType;
 import nc.vo.jzinv.receive.ReceiveVO;
 import nc.vo.jzinv.vat0505.VatTaxorgsetVO;
 /**
@@ -55,4 +54,5 @@ public class ReceAddAction extends InvoiceAction{
 		    
 		}
 	}
+	
 }

@@ -243,7 +243,7 @@ public class ReceiveEH extends ManageEventHandler{
 			setHeadItemEditable(true);
 		}
 		//linan 20171025 根据单据状况设置税金拆分单可编辑性
-		setTaxSplitFields();
+		//setTaxSplitFields();
 		super.onBoEdit();
 	    new ReceEditAction((BillManageUI) getBillManageUI()).doAction();
 	}
@@ -267,7 +267,7 @@ public class ReceiveEH extends ManageEventHandler{
 	* @return void    
 	* @throws 
 	*/
-	private void setTaxSplitFields() {
+/*	private void setTaxSplitFields() {
 		String vinvcode = (String)this.getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.VINVCODE).getValueObject();
 		String vinvno = (String)this.getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.VINVNO).getValueObject();
 		//如果发票号和发票code有一个为空就不能编辑，这种情况应该不会发生，但是还是判断下，以防万一
@@ -325,5 +325,5 @@ public class ReceiveEH extends ManageEventHandler{
 		}
 		
 
-	}
+	}*/
 }
