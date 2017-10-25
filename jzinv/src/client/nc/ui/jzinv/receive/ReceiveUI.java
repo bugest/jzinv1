@@ -136,7 +136,7 @@ public class ReceiveUI extends MultiChildBillManageUI implements ChangeListener,
 	 * @param e
 	 */
 	public void afterHeadEdit(BillEditEvent e) {
-		if (e.getKey().equals("pk_deptdoc")) {// 经办部门
+		if (e.getKey().equals("pk_deptdoc")) {// 经办部门	
 			getDeptPsnRela().setPsnByDept();
 			//			getBillCardPanel().execHeadEditFormulas();
 		} else if (e.getKey().equals("pk_psndoc")) {// 经办人
