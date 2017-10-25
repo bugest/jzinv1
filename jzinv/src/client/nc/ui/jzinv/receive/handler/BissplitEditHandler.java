@@ -33,8 +33,7 @@ public class BissplitEditHandler extends InvCardEditHandler {
 					getClientUI());
 			//如果是选中拆分，则计算累计和未拆分金额
 			//设置各种税金
-			setTax(bissplit);
-			
+			setTax(bissplit);	
 		}
 	}
 
@@ -117,56 +116,5 @@ public class BissplitEditHandler extends InvCardEditHandler {
 			}
 		}
 	}
-
-	/**
-	 * @Title: setNsurplussplittax
-	 * @Description: 设置剩余拆分税额
-	 * @param
-	 * @return void
-	 * @throws
-	 */
-/*	private void setNsurplussplittax(UFBoolean bissplit) {
-		// 选中时计算剩余税金
-		if (bissplit.booleanValue()) {
-			String pk_receive = (String) getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.PK_RECEIVE).getValueObject();
-			String vinvcode = (String) getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.VINVCODE).getValueObject();
-			String vinvno = (String) getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.VINVNO).getValueObject();
-			getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.NSURPLUSSPLITTAX).setValue(456);
-		}
-	}
-*/
-	/**
-	 * @Title: setTaxInfo
-	 * @Description: 设置税金
-	 * @param
-	 * @return void
-	 * @throws
-	 */
-/*	private void setTaxInfo(UFBoolean bissplit) {
-		if (bissplit.booleanValue()) {
-			//判断是不是第一次
-			
-			UFBoolean isFirst = UFBoolean.FALSE;
-			// 如果第一次就可以编辑
-			if (isFirst.equals(UFBoolean.TRUE)) {
-			} else {
-				//如果不是第一次就填上上一次的金额
- 
-			}
-			getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY)
-					.setEdit(isFirst.booleanValue());
-			getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY)
-					.setEdit(isFirst.booleanValue());
-			getClientUI().getBillCardPanel()
-					.getHeadItem(ReceiveVO.NTOTALINVOICETAX)
-					.setEdit(isFirst.booleanValue());
-		}
-	}*/
 
 }

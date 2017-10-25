@@ -586,7 +586,11 @@ public class ReceiveServiceImpl implements IReceiveService {
 		sqlStr.append(" select * from jzinv_receive r ");
 		sqlStr.append(" where VINVCODE = '" + vinvcode + "'");
 		sqlStr.append(" and VINVNO = '" + vinvno + "'");
-		sqlStr.append(" and PK_RECEIVE <> '" + pk_receive + "'");
+		if(pk_receive == null || "".equals(pk_receive.trim())) {
+			sqlStr.append(" and PK_RECEIVE is not null ");
+		} else {
+			sqlStr.append(" and PK_RECEIVE <> '" + pk_receive + "'");
+		}	
 		sqlStr.append(" and dr = 0 ");
 		List<ReceiveVO> result = (List<ReceiveVO>) new BaseDAO().executeQuery(sqlStr.toString(),
 				new BeanListProcessor(ReceiveVO.class));

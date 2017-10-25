@@ -24,6 +24,7 @@ import nc.ui.jzinv.receive.handler.NpriceEditHandler;
 import nc.ui.jzinv.receive.handler.NtaxmnyEditHandler;
 import nc.ui.jzinv.receive.handler.NtaxrateEditHandler;
 import nc.ui.jzinv.receive.handler.NthrecemnyEditHandler;
+import nc.ui.jzinv.receive.handler.NtotalinvoicetaxAfterEdit;
 import nc.ui.jzinv.receive.handler.OpenDateEditHandler;
 import nc.ui.jzinv.receive.handler.ProjectEditHandler;
 import nc.ui.jzinv.receive.handler.SupplierEditHandler;
@@ -182,6 +183,10 @@ public class ReceiveUI extends MultiChildBillManageUI implements ChangeListener,
 		}
 		else if (ReceiveVO.VINVNO.equals(e.getKey())) {
 			new VinvnoEditHandler(this).cardHeadAfterEdit(e);
+		}
+		//票面总税金
+		else if (ReceiveVO.NTOTALINVOICETAX.equals(e.getKey())) {
+			new NtotalinvoicetaxAfterEdit(this).cardHeadAfterEdit(e);
 		}
 	}
 
