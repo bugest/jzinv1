@@ -47,7 +47,6 @@ import nc.vo.jzinv.receive.ReceiveDetailVO;
 import nc.vo.jzinv.receive.ReceiveVO;
 import nc.vo.pub.BusinessException;
 import nc.vo.pub.CircularlyAccessibleValueObject;
-import nc.vo.pub.lang.UFBoolean;
 import nc.vo.pub.lang.UFDouble;
 import nc.vo.trade.button.ButtonVO;
 

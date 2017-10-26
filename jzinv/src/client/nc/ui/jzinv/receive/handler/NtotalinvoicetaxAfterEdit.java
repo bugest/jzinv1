@@ -1,17 +1,9 @@
 package nc.ui.jzinv.receive.handler;
 
-import java.util.List;
-
-import nc.bs.framework.common.NCLocator;
-import nc.bs.logging.Logger;
-import nc.itf.jzinv.receive.IReceiveService;
 import nc.ui.jzinv.pub.handler.InvCardEditHandler;
 import nc.ui.pub.bill.BillEditEvent;
 import nc.ui.trade.manage.BillManageUI;
 import nc.vo.jzinv.receive.ReceiveVO;
-import nc.vo.pub.BusinessException;
-import nc.vo.pub.lang.UFBoolean;
-import nc.vo.pub.lang.UFDouble;
 
 /**
  * @ClassName: NtotalinvoicetaxAfterEdit

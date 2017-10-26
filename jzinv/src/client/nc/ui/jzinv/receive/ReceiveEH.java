@@ -1,12 +1,5 @@
 package nc.ui.jzinv.receive;
 
-import java.util.List;
-
-import org.apache.commons.lang.StringUtils;
-
-import nc.bs.framework.common.NCLocator;
-import nc.bs.logging.Logger;
-import nc.itf.jzinv.receive.IReceiveService;
 import nc.ui.jzinv.pub.eventhandler.ManageEventHandler;
 import nc.ui.jzinv.receive.action.ReceAddAction;
 import nc.ui.jzinv.receive.action.ReceCancelAction;
@@ -20,16 +13,16 @@ import nc.ui.trade.bill.RefBillTypeChangeEvent;
 import nc.ui.trade.controller.IControllerBase;
 import nc.ui.trade.manage.BillManageUI;
 import nc.vo.jzinv.inv0503.ReceiveCollVO;
-import nc.vo.jzinv.pub.IJzinvBillType;
 import nc.vo.jzinv.pub.IJzinvButton;
 import nc.vo.jzinv.pub.utils.SafeCompute;
 import nc.vo.jzinv.receive.AggReceiveVO;
 import nc.vo.jzinv.receive.ReceiveDetailVO;
 import nc.vo.jzinv.receive.ReceiveVO;
 import nc.vo.pub.AggregatedValueObject;
-import nc.vo.pub.BusinessException;
 import nc.vo.pub.lang.UFBoolean;
 import nc.vo.pub.lang.UFDouble;
+
+import org.apache.commons.lang.StringUtils;
 
 public class ReceiveEH extends ManageEventHandler{
 
