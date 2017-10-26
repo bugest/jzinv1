@@ -155,14 +155,20 @@ public class ReceiveEditTool {
 	* @throws 
 	*/
 	public static void bIsSplitAfterEditSetData(UFBoolean bissplit, BillManageUI billManagerUI) {
-		if(!bissplit.booleanValue()){
+/*		if(!bissplit.booleanValue()){
 			//清空相关字段 
 			billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY).setValue(null);
 			billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY).setValue(null);
 			billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICETAX).setValue(null);
 			billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NCUMULATIVESPLITTAX).setValue(null);
 			billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NSURPLUSSPLITTAX).setValue(null);
-		}
+		}*/
+		//无论选中和不选中先清空，后边有逻辑增加逻辑
+		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY).setValue(null);
+		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY).setValue(null);
+		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICETAX).setValue(null);
+		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NCUMULATIVESPLITTAX).setValue(null);
+		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NSURPLUSSPLITTAX).setValue(null);
 		//设置是否必填
 		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY).setNull(bissplit.booleanValue());
 		billManagerUI.getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY).setNull(bissplit.booleanValue());

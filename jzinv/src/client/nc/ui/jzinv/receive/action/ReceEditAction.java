@@ -97,7 +97,8 @@ public class ReceEditAction extends InvoiceAction{
 					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY).setEdit(bissplit.booleanValue());
 					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY).setEdit(bissplit.booleanValue());
 					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICETAX).setEdit(bissplit.booleanValue());	
-					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.BISSPLIT).setEdit(bissplit.booleanValue());
+					//getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.BISSPLIT).setEdit(bissplit.booleanValue());
+					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY).setNull(bissplit.booleanValue());
 					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY).setNull(bissplit.booleanValue());
 					getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.NTOTALINVOICETAX).setNull(bissplit.booleanValue());
 				} else {
