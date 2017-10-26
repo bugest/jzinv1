@@ -75,15 +75,15 @@ public class BissplitEditHandler extends InvCardEditHandler {
 						// 不是第一次就用之前其他的给填上
 						getClientUI().getBillCardPanel()
 								.getHeadItem(ReceiveVO.NTOTALINVOICEAMOUNTMNY)
-								.setValue(receiveVO.getNtotalinvoiceamountmny());
+								.setValue(receiveVO.getNtotalinvoiceamountmny() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoiceamountmny());
 						getClientUI()
 								.getBillCardPanel()
 								.getHeadItem(
 										ReceiveVO.NTOTALINVOICEAMOUNTTAXMNY)
-								.setValue(receiveVO.getNtotalinvoiceamounttaxmny());
+								.setValue(receiveVO.getNtotalinvoiceamounttaxmny() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoiceamounttaxmny());
 						getClientUI().getBillCardPanel()
 								.getHeadItem(ReceiveVO.NTOTALINVOICETAX)
-								.setValue(receiveVO.getNtotalinvoicetax());
+								.setValue(receiveVO.getNtotalinvoicetax() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoicetax());
 					}
 					getClientUI().getBillCardPanel()
 					.getHeadItem(ReceiveVO.NCUMULATIVESPLITTAX)
