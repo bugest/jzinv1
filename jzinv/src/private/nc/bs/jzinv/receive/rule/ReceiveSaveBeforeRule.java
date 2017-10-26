@@ -272,6 +272,10 @@ public class ReceiveSaveBeforeRule {
 		} else {
 			UFDouble sumTax = UFDouble.ZERO_DBL;
 			for (ReceiveVO receiveVO : receiveVOList) {
+				//判断之前的是不是都勾选了，如果有没勾选的就报错
+				if (!UFBoolean.TRUE.equals(receiveVO.getBissplit())) {
+					throw new BusinessException("本发票的其他单据没有选中拆分!");
+				}
 				sumTax = sumTax
 						.add(receiveVO.getNtaxmny() == null ? UFDouble.ZERO_DBL
 								: receiveVO.getNtaxmny());
