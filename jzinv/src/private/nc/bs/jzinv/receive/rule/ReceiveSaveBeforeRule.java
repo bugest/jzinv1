@@ -248,6 +248,12 @@ public class ReceiveSaveBeforeRule {
 		UFDouble ntotalinvoicetax = ((ReceiveVO) vos.getParentVO())
 				.getNtotalinvoicetax() == null ? UFDouble.ZERO_DBL
 				: ((ReceiveVO) vos.getParentVO()).getNtotalinvoicetax();
+		UFDouble ntotalinvoiceamountmny = ((ReceiveVO) vos.getParentVO())
+				.getNtotalinvoiceamountmny() == null ? UFDouble.ZERO_DBL
+				: ((ReceiveVO) vos.getParentVO()).getNtotalinvoiceamountmny();
+		UFDouble ntotalinvoiceamounttaxmny = ((ReceiveVO) vos.getParentVO())
+				.getNtotalinvoiceamounttaxmny() == null ? UFDouble.ZERO_DBL
+				: ((ReceiveVO) vos.getParentVO()).getNtotalinvoiceamounttaxmny();
 		UFDouble ntaxmny = ((ReceiveVO) vos.getParentVO()).getNtaxmny() == null ? UFDouble.ZERO_DBL
 				: ((ReceiveVO) vos.getParentVO()).getNtaxmny();
 		List<ReceiveVO> receiveVOList = null;
@@ -269,6 +275,20 @@ public class ReceiveSaveBeforeRule {
 				sumTax = sumTax
 						.add(receiveVO.getNtaxmny() == null ? UFDouble.ZERO_DBL
 								: receiveVO.getNtaxmny());
+				//判断当前的票面金额数据是否与其他的拆分数据相同，这种判断主要用于新建时，并发操作：
+				//a新增 b新增 a保存 b不能保存,与以保存的数据进行比较
+				UFDouble savedNtotalinvoicetax = receiveVO.getNtotalinvoicetax() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoicetax();
+				UFDouble savedNtotalinvoiceamountmny = receiveVO.getNtotalinvoiceamountmny() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoiceamountmny();
+				UFDouble savedNtotalinvoiceamounttaxmny = receiveVO.getNtotalinvoiceamounttaxmny() == null ? UFDouble.ZERO_DBL : receiveVO.getNtotalinvoiceamounttaxmny();
+				if (!savedNtotalinvoicetax.equals(ntotalinvoicetax)) {
+					throw new BusinessException("票面总税金和本发票拆分的其他单据中的数据不同!");
+				}
+				if (!savedNtotalinvoiceamountmny.equals(ntotalinvoiceamountmny)) {
+					throw new BusinessException("票面总金额(无税)和本发票拆分的其他单据中的数据不同!");
+				}
+				if (!savedNtotalinvoiceamounttaxmny.equals(ntotalinvoiceamounttaxmny)) {
+					throw new BusinessException("票面总金额和本发票拆分的其他单据中的数据不同!");
+				}
 			}
 			if (ntotalinvoicetax.sub(sumTax).sub(ntaxmny)
 					.compareTo(UFDouble.ZERO_DBL) < 0) {

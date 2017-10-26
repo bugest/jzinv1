@@ -29,7 +29,7 @@ public class BissplitEditHandler extends InvCardEditHandler {
 	public void cardHeadAfterEdit(BillEditEvent e) {
 		if (ReceiveVO.BISSPLIT.equals(e.getKey())) {
 			UFBoolean bissplit = new UFBoolean((String) e.getValue());
-			new BissplitAfterEdit().bIsSplitAfterEditSetData(bissplit,
+			ReceiveEditTool.bIsSplitAfterEditSetData(bissplit,
 					getClientUI());
 			//如果是选中拆分，则计算累计和未拆分金额
 			//设置各种税金

@@ -28,7 +28,8 @@ public class NtotalinvoicetaxAfterEdit extends InvCardEditHandler {
 	@Override
 	public void cardHeadAfterEdit(BillEditEvent e) {
 		if (ReceiveVO.NTOTALINVOICETAX.equals(e.getKey())) {
-			UFBoolean bissplit = new UFBoolean(getClientUI().getBillCardPanel()
+			ReceiveEditTool.setNsurplussplittax(getClientUI());
+			/*UFBoolean bissplit = new UFBoolean(getClientUI().getBillCardPanel()
 					.getHeadItem(ReceiveVO.BISSPLIT).getValueObject()
 					.toString());
 			// 如果没选中的话，就不处理逻辑
@@ -74,7 +75,7 @@ public class NtotalinvoicetaxAfterEdit extends InvCardEditHandler {
 				getClientUI().getBillCardPanel()
 						.getHeadItem(ReceiveVO.NSURPLUSSPLITTAX)
 						.setValue(ntotalinvoicetax.sub(ntaxmny).sub(sumTax));
-			}
+			}*/
 		}
 	}
 

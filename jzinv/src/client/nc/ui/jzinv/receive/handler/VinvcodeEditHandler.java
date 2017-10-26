@@ -22,7 +22,7 @@ public class VinvcodeEditHandler extends InvCardEditHandler{
 		if(ReceiveVO.VINVCODE.equals(e.getKey())){
 			//只要改变，就先设置不拆分
 			getClientUI().getBillCardPanel().getHeadItem(ReceiveVO.BISSPLIT).setValue(false);
-			new BissplitAfterEdit().bIsSplitAfterEditSetData(UFBoolean.FALSE, getClientUI());
+			ReceiveEditTool.bIsSplitAfterEditSetData(UFBoolean.FALSE, getClientUI());
 			String vinvcode = (String) getCardPanel().getHeadItem(ReceiveVO.VINVCODE).getValueObject();
 			String vinvno = (String) getCardPanel().getHeadItem(ReceiveVO.VINVNO).getValueObject();
 			//如果这code和no有一个为空就，就不能选择拆分，不能编辑
